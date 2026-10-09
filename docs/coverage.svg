@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 330" role="img" aria-label="Saved H3 cells and OSM POI counts for Berlin Frankfurt Munich">
+<rect width="960" height="330" rx="16" fill="#101a2d"/>
+<text x="36" y="43" fill="white" font-family="Arial" font-size="24" font-weight="bold">Saved spatial coverage</text>
+<text x="36" y="69" fill="#bac9da" font-family="Arial" font-size="13">Separate scales per measure; bar lengths are comparable within each measure only</text>
+<text x="36" y="118" fill="white" font-family="Arial" font-size="16">Berlin</text>
+<rect x="190" y="104" width="300" height="18" rx="4" fill="#50d2c2"/>
+<text x="500" y="118" fill="#e7f2ff" font-family="Arial" font-size="13">12,574 cells</text>
+<rect x="190" y="127" width="300" height="18" rx="4" fill="#a3b7ff"/>
+<text x="500" y="141" fill="#e7f2ff" font-family="Arial" font-size="13">30,661 POIs</text>
+<text x="36" y="189" fill="white" font-family="Arial" font-size="16">Frankfurt</text>
+<rect x="190" y="175" width="98" height="18" rx="4" fill="#50d2c2"/>
+<text x="298" y="189" fill="#e7f2ff" font-family="Arial" font-size="13">4,119 cells</text>
+<rect x="190" y="198" width="82" height="18" rx="4" fill="#a3b7ff"/>
+<text x="282" y="212" fill="#e7f2ff" font-family="Arial" font-size="13">8,476 POIs</text>
+<text x="36" y="260" fill="white" font-family="Arial" font-size="16">Munich</text>
+<rect x="190" y="246" width="108" height="18" rx="4" fill="#50d2c2"/>
+<text x="308" y="260" fill="#e7f2ff" font-family="Arial" font-size="13">4,540 cells</text>
+<rect x="190" y="269" width="134" height="18" rx="4" fill="#a3b7ff"/>
+<text x="334" y="283" fill="#e7f2ff" font-family="Arial" font-size="13">13,740 POIs</text>
+<text x="36" y="318" fill="#bac9da" font-family="Arial" font-size="12">Source: versioned results_summary.csv | teal: H3 cells; lavender: POIs</text>
+</svg>
