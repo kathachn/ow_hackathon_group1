@@ -271,7 +271,7 @@ def analyse_ansicht(H, stadt, key):
     c1, c2, c3 = st.columns(3, gap="medium")
     with c1:
         kasten("Geschäftslagen-Filter", f"Mindestens {P['n_min_geschaeftslage']} POIs in Zelle und Ring 1",
-               f"<ul><li>{' · '.join(f"{n}: {v['anteil_lagen'] * 100:.0f} %" for n, v in daten.items())} der Stadtzellen sind Geschäftslagen.</li>"
+               f"""<ul><li>{' · '.join(f"{n}: {v['anteil_lagen'] * 100:.0f}%" for n, v in daten.items())} der Stadtzellen sind Geschäftslagen.</li></ul>"""
                "<li>Parks, Gleise und Wohnstraßen fallen heraus. Nur Geschäftslagen bekommen einen Rang.</li></ul>")
     with c2:
         kasten("Prozentrang und Score-Index", "Referenz sind die Geschäftslagen der Stadt",
