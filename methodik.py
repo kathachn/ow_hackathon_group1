@@ -427,7 +427,7 @@ def daten_ansicht(H):
     aktionstitel("Aus Zensus, OpenStreetMap und Stadtgrenzen wird in sechs Schritten eine Tabelle mit einer Zeile je Hexagon.")
     pipeline([
         ("1 Quellen", "Zwei offene Quellen", "Zensus 2022 (100-m-Gitter, Stand Mai 2022), OpenStreetMap über die Overpass API, amtliche Stadtgrenzen", None),
-        ("2 Gebiet", "Stadt plus Puffer", f"Puffer {f0(dg.PUFFER_M)} m: {' · '.join(f'{n} {f0(v['zellen_gesamt'])} gegenüber {f0(v['zellen'])}' for n, v in daten.items())} Zellen", None),
+        ("2 Gebiet", "Stadt plus Puffer", f"Puffer {f0(dg.PUFFER_M)} m: {' · '.join(f"{n} {f0(v['zellen_gesamt'])} gegenüber {f0(v['zellen'])}" for n, v in daten.items())} Zellen", None),
         ("3 Raster", "H3, Auflösung 9", "Zellen von etwa 0,1 km² und 200 m Kantenlänge", None),
         ("4 Zuordnung", "Mittelpunkt entscheidet", "Zensuszellen über den Mittelpunkt, POIs über die Koordinate, Miete nach Wohnungen gewichtet", None),
         ("5 Bereinigung", "Dubletten und Lücken", f"Dubletten unter {dg.DUBLETTEN_RADIUS_M} m entfernt, Miete aus bis zu 2 Ringen Nachbarn, Alter aus dem Stadtwert, jeweils markiert", None),
@@ -520,7 +520,7 @@ def daten_ansicht(H):
     pv = {n: v["pca_var"] for n, v in daten.items() if v["pca_var"] is not None}
     erkenntnis(4, "Das Umfeld ist eindimensional: Eine Achse beschreibt drei Viertel der Unterschiede.",
                "Erklärte Varianz der ersten Komponente: " + ", ".join(f"{n} {a * 100:.0f} %" for n, a in pv.items()) + ".",
-               f"Die Ladungen sind fast gleich. Deshalb prüfen wir gegen reine Zentralität: Liegt die Korrelation mit der Gesamtdichte über 0,9, gilt der Rückfall auf den Affinitätsanteil. Aktuell: {', '.join(f'{n} {f2(v['pca_korr'])}' for n, v in daten.items() if v['pca_korr'] is not None)}.")
+               f"Die Ladungen sind fast gleich. Deshalb prüfen wir gegen reine Zentralität: Liegt die Korrelation mit der Gesamtdichte über 0,9, gilt der Rückfall auf den Affinitätsanteil. Aktuell: {', '.join(f"{n} {f2(v['pca_korr'])}" for n, v in daten.items() if v['pca_korr'] is not None)}.")
 
     erkenntnis(5, "Das Milieu betrifft nur wenige, aber zentrale Lagen.",
                "Stadtzellen mit Milieu-Malus (m < 0,9): " + ", ".join(f"{n} {v['milieu_anteil'] * 100:.0f} %" for n, v in daten.items()) + ".",
