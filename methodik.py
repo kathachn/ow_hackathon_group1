@@ -271,9 +271,7 @@ def analyse_ansicht(H, stadt, key):
     c1, c2, c3 = st.columns(3, gap="medium")
     with c1:
         kasten("Geschäftslagen-Filter", f"Mindestens {P['n_min_geschaeftslage']} POIs in Zelle und Ring 1",
-               "<ul><li>" + " · ".join(
-                   f"{n}: {v['anteil_lagen'] * 100:.0f}%" for n, v in daten.items()
-               ) + " der Stadtzellen sind Geschäftslagen.</li>"
+               f"""<ul><li>{' · '.join(f"{n}: {v['anteil_lagen'] * 100:.0f}%" for n, v in daten.items())} der Stadtzellen sind Geschäftslagen.</li></ul>"""
                "<li>Parks, Gleise und Wohnstraßen fallen heraus. Nur Geschäftslagen bekommen einen Rang.</li></ul>")
     with c2:
         kasten("Prozentrang und Score-Index", "Referenz sind die Geschäftslagen der Stadt",
@@ -427,13 +425,9 @@ def daten_ansicht(H):
     # 1 Pipeline
     abschnitt(H, "d1", "1 · So haben wir mit den Daten gearbeitet")
     aktionstitel("Aus Zensus, OpenStreetMap und Stadtgrenzen wird in sechs Schritten eine Tabelle mit einer Zeile je Hexagon.")
-    puffer_details = " · ".join(
-        f"{n} {f0(v['zellen_gesamt'])} gegenüber {f0(v['zellen'])}"
-        for n, v in daten.items()
-    )
     pipeline([
         ("1 Quellen", "Zwei offene Quellen", "Zensus 2022 (100-m-Gitter, Stand Mai 2022), OpenStreetMap über die Overpass API, amtliche Stadtgrenzen", None),
-        ("2 Gebiet", "Stadt plus Puffer", f"Puffer {f0(dg.PUFFER_M)} m: {puffer_details} Zellen", None),
+        ("2 Gebiet", "Stadt plus Puffer", f"Puffer {f0(dg.PUFFER_M)} m: {' · '.join(f"{n} {f0(v['zellen_gesamt'])} gegenüber {f0(v['zellen'])}" for n, v in daten.items())} Zellen", None),
         ("3 Raster", "H3, Auflösung 9", "Zellen von etwa 0,1 km² und 200 m Kantenlänge", None),
         ("4 Zuordnung", "Mittelpunkt entscheidet", "Zensuszellen über den Mittelpunkt, POIs über die Koordinate, Miete nach Wohnungen gewichtet", None),
         ("5 Bereinigung", "Dubletten und Lücken", f"Dubletten unter {dg.DUBLETTEN_RADIUS_M} m entfernt, Miete aus bis zu 2 Ringen Nachbarn, Alter aus dem Stadtwert, jeweils markiert", None),
