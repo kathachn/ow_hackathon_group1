@@ -1,0 +1,4 @@
+city,hexagons,pois,portfolio_sites,poi_share_top_cells,baseline,pca_pc1_variance
+berlin,12574,30661,5,0.836,0.2,0.814
+frankfurt,4119,8476,5,0.817,0.2,0.754
+muenchen,4540,13740,5,0.683,0.2,0.798
