@@ -3,7 +3,13 @@ pydeck
 altair
 pandas
 numpy
+scipy
 scikit-learn
 statsmodels
 h3>=4
 pyyaml
+requests
+pyproj
+shapely
+pyshp
+certifi
